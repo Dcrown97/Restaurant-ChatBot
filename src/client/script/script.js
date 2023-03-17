@@ -1,5 +1,32 @@
-const socket = io();
-const messageList = document.getElementById("messages")
+function makeid(length) {
+    let result = '';
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    const charactersLength = characters.length;
+    let counter = 0;
+    while (counter < length) {
+        result += characters.charAt(Math.floor(Math.random() * charactersLength));
+        counter += 1;
+    }
+    return result;
+}
+
+const getSessionId = () => {
+    const id = localStorage.getItem("session_id");
+    if (id) {
+        return id
+    } else {
+        const newId = makeid(10)
+        localStorage.setItem("session_id", newId);
+        return newId
+    }
+}
+
+const socket = io({
+    query: {
+        id: getSessionId()
+    }
+});
+const messageList = document.getElementById("messages");
 
 function sendMessage(val, msg) {
     socket.emit('message', val);
@@ -14,7 +41,7 @@ function sendMessage(val, msg) {
 }
 
 function sendCheckoutMessage(val, msg) {
-    
+
 
     if (!$("input[id='checked']:checked").val()) {
         messageList.innerHTML += `
@@ -34,7 +61,7 @@ function sendCheckoutMessage(val, msg) {
         </div>
         <span class='chatbot__arrow chatbot__arrow--left'></span>
         <div class='chatbot__message'>
-        No order to place
+        Please select an item to place order
         </div>
       </li>
     `
@@ -104,13 +131,18 @@ socket.on('newMessage', (val) => {
         `
             const ListOrder = document.getElementById(`ListOrder-${random}`)
             val.items.forEach((i, e) => {
+                const itemListRandom = makeid(10);
                 ListOrder.innerHTML += `
-                        <p>Date: ${new Date(i.date).toLocaleDateString()}</p>
-                        <p>Status: ${i.status}</p>
-                        <p>Items:</p>
+                      <div class="order_card">  <p><b>Date</b>: ${new Date(i.createdAt).toLocaleDateString()} ${new Date(i.createdAt).toLocaleTimeString()}</p>
+                        <p><b>Status</b>: ${i.status}</p>
+                        <p><b>Items</b>:</p>
+                        <div id="orderItemsList-${itemListRandom}"></div>
+                    </div>
                     `
                 i.orders.forEach((a, b) => {
-                    ListOrder.innerHTML += `${a} <br/> <div style="border-bottom: 1px solid #000; margin-bottom: 10px"></div>`;
+
+                    const orderItemsList = document.getElementById(`orderItemsList-${itemListRandom}`)
+                    orderItemsList.innerHTML += `${a}, `;
                 })
             })
         } else {

@@ -54,7 +54,6 @@
   background: #efefef;
 } */
 
-
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,600");
 .chatbot {
   position: fixed;
@@ -228,9 +227,10 @@
 
 .animation:last-child {
   -webkit-animation: fadein 0.25s;
-          animation: fadein 0.25s;
-  -webkit-animation-timing-function: all 200ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
-          animation-timing-function: all 200ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  animation: fadein 0.25s;
+  -webkit-animation-timing-function: all 200ms
+    cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  animation-timing-function: all 200ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 
 .chatbot__arrow {
@@ -315,15 +315,15 @@
   background: black;
   border-radius: 50px;
   -webkit-animation: loader 0.45s infinite alternate;
-          animation: loader 0.45s infinite alternate;
+  animation: loader 0.45s infinite alternate;
 }
 .loader__dot:nth-of-type(2) {
   -webkit-animation-delay: 0.15s;
-          animation-delay: 0.15s;
+  animation-delay: 0.15s;
 }
 .loader__dot:nth-of-type(3) {
   -webkit-animation-delay: 0.35s;
-          animation-delay: 0.35s;
+  animation-delay: 0.35s;
 }
 
 @-webkit-keyframes loader {
@@ -372,7 +372,8 @@
 }
 
 body {
-  background: url("https://images.unsplash.com/photo-1524222717473-730000096953?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80") no-repeat center center;
+  background: url("https://images.unsplash.com/photo-1524222717473-730000096953?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80")
+    no-repeat center center;
   background-size: cover;
   height: 100%;
   font-family: "Open Sans", sans-serif;
@@ -390,4 +391,11 @@ strong {
 .intro {
   display: block;
   margin-bottom: 20px;
+}
+
+.order_card {
+  padding: 20px;
+  background-color: #7ee0d2;
+  border-radius: 20px;
+  margin-top: 10px;
 }
