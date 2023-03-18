@@ -164,10 +164,10 @@ yarn run start:dev
 
 ## Contact
 
-- Twitter - [@tobisupreme](https://twitter.com/MrDarasimi)
+- Twitter - [@MrDarasimi](https://twitter.com/MrDarasimi)
 - email - aisimiyuoluwadara@gmail.com
 
-Project Link: [chowsupreme](https://github.com/Dcrown97/Restaurant-ChatBot)
+Project Link: [Restaurant-ChatBot](https://github.com/Dcrown97/Restaurant-ChatBot)
 
 <p align="right"><a href="#readme-top">back to top</a></p>
 
