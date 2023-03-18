@@ -158,7 +158,7 @@ socket.on('newMessage', (val) => {
                 i.orders.forEach((a, b) => {
 
                     const orderItemsList = document.getElementById(`orderItemsList-${itemListRandom}`)
-                    orderItemsList.innerHTML += `${a}, `;
+                    orderItemsList.innerHTML += `${a} <br />`;
                 })
             })
         } else {
