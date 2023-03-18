@@ -1,3 +1,4 @@
+const messageList = document.getElementById("messages");
 function makeid(length) {
     let result = '';
     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -26,7 +27,7 @@ const socket = io({
         id: getSessionId()
     }
 });
-const messageList = document.getElementById("messages");
+
 
 function sendMessage(val, msg) {
     socket.emit('message', val);
