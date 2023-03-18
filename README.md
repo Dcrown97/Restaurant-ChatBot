@@ -180,7 +180,7 @@ Project Link: [Restaurant-ChatBot](https://github.com/Dcrown97/Restaurant-ChatBo
 This project was made possible by:
 
 - [AltSchool Africa School of Engineering](https://altschoolafrica.com/schools/engineering)
-- [tobisupreme Drew's README Template](https://github.com/tobisupreme/chowsupreme#readme)
+- [tobisupreme README Template](https://github.com/tobisupreme/chowsupreme#readme)
 - [Guimauve  Chatbot Assistant Prototype design](https://codepen.io/Guimauve01/pen/rwVOrV)
 
 <p align="right"><a href="#readme-top">back to top</a></p>
