@@ -30,7 +30,7 @@
 
 ## Restaurant-Chatbot
 
-&mdash; a restaurant chatbot built by <a href="https://github.com/Dcrown97">Dcrown97</a>.
+&mdash; A restaurant chatbot built by <a href="https://github.com/Dcrown97">Dcrown97</a>.
 
 <p align="right"><a href="#readme-top">back to top</a></p>
 
