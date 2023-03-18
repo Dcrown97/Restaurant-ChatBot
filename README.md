@@ -138,7 +138,7 @@ or
 yarn install
 ```
 
-#### Update .env with [.envSample](/envSample)
+#### Update .env with [.envSample](/.envSample)
 
 #### Run a development server
 
