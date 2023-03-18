@@ -60,49 +60,31 @@
 
 <summary> <strong>Requirements for the examination project</strong> </summary>
 
-- [x] Users should have a first_name, last_name, email, password,
+- [x] ChatBot interface would be like a chat interface
 
-- [x] A user should be able to sign up and sign in into the blog app
+- [x] No need for authentication but we should be able to store user session based on devices
 
-- [x] Use JWT as authentication strategy and expire the token after 1 hour
+- [x] When a customer lands on the chatbot page, the bot should send these options to the customer:
 
-- [x] A blog can be in two states; draft and published
+  - [x] Select 1 to Place an order
 
-- [x] Logged in and not logged in users should be able to get a list of published blogs created
+  - [x] Select 99 to checkout order
 
-- [x] Logged in and not logged in users should be able to to get a published blog
+  - [x] Select 98 to see order history
 
-- [x] Logged in users should be able to create a blog.
+  - [x] Select 97 to see current order
 
-- [x] When a blog is created, it is in draft state
+  - [x] Select 0 to cancel order
 
-- [x] The owner of the blog should be able to update the state of the blog to published
+- [x] When a customer selects “1”, the bot should return a list of items from the restaurant. It is up to you to create the items in your restaurant for the customer. The order items can have multiple options but the customer should be able to select the preferred items from the list using this same number select system and place an order.
 
-- [x] The owner of a blog should be able to edit the blog in draft or published state
+- [x] When a customer selects “99” out an order, the bot should respond with “order placed” and if none the bot should respond with “No order to place”. Customer should also see an option to place a new order
 
-- [x] The owner of the blog should be able to delete the blog in draft or published state
+- [x] When a customer selects “98”, the bot should be able to return all placed order
 
-- [x] The owner of the blog should be able to get a list of their blogs.
+- [x] When a customer selects “97”, the bot should be able to return current order
 
-- [x] The endpoint should be paginated
-
-- [x] It should be filterable by state
-
-- [x] Blogs created should have title, description, tags, author, timestamp, state, read_count, reading_time and body.
-
-- [x] The list of blogs endpoint that can be accessed by both logged in and not logged in users should be paginated:
-
-  - [x] default it to 20 blogs per page.
-
-  - [x] It should also be searchable by author, title and tags.
-
-  - [x] It should also be orderable by read_count, reading_time and timestamp
-
-- [x] When a single blog is requested, the api should return the user information (the author) with the blog. The read_count of the blog too should be updated by 1
-
-- [x] Come up with any algorithm for calculating the reading_time of the blog.
-
-- [x] Write tests for all endpoints
+- [x] When a customer selects “0”, the bot should cancel the order if there is.
 
 <p align="right"><a href="#readme-top">back to top</a></p>
 
