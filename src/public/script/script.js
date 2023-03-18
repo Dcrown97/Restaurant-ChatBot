@@ -1,4 +1,8 @@
 const messageList = document.getElementById("messages");
+
+const scroll = () => {
+    messageList.scrollIntoView(0, document.body.scrollHeight);
+};
 function makeid(length) {
     let result = '';
     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -39,6 +43,7 @@ function sendMessage(val, msg) {
             <span class='chatbot__arrow chatbot__arrow--right'></span>
         </li>
     `
+    scroll();
 }
 
 function sendCheckoutMessage(val, msg) {
@@ -53,6 +58,7 @@ function sendCheckoutMessage(val, msg) {
             <span class='chatbot__arrow chatbot__arrow--right'></span>
         </li>
     `
+        scroll();
         messageList.innerHTML += `
         <li class='is-ai animation'>
         <div class="is-ai__profile-picture">
@@ -66,6 +72,8 @@ function sendCheckoutMessage(val, msg) {
         </div>
       </li>
     `
+        scroll();
+
         return false;
     }
 
@@ -89,6 +97,8 @@ function sendCheckoutMessage(val, msg) {
       <span class='chatbot__arrow chatbot__arrow--right'></span>
     </li>
     `
+    scroll();
+
     $("input[id='checked']:checked").prop("checked", false)
 }
 
@@ -110,6 +120,8 @@ socket.on('newMessage', (val) => {
         </div>
       </li>
         `
+        scroll();
+
         const OrderList = document.getElementById(`OrderList-${random}`)
         val.items.forEach((i, e) => {
             OrderList.innerHTML += `<p><input type="checkbox" id='checked' name=${i.name} /> ${i.name}</p>`
@@ -130,6 +142,8 @@ socket.on('newMessage', (val) => {
         </div>
       </li>
         `
+            scroll();
+
             const ListOrder = document.getElementById(`ListOrder-${random}`)
             val.items.forEach((i, e) => {
                 const itemListRandom = makeid(10);
@@ -140,6 +154,7 @@ socket.on('newMessage', (val) => {
                         <div id="orderItemsList-${itemListRandom}"></div>
                     </div>
                     `
+                scroll();
                 i.orders.forEach((a, b) => {
 
                     const orderItemsList = document.getElementById(`orderItemsList-${itemListRandom}`)
@@ -159,6 +174,7 @@ socket.on('newMessage', (val) => {
         </div>
       </li>
         `
+            scroll();
         }
     console.log(val)
 })
