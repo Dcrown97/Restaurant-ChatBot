@@ -4,12 +4,12 @@ const http = require("http")
 const path = require("path")
 const server = http.createServer(app);
 const { Server } = require("socket.io")
-const { dbConnect } = require('./client/database/db.js')
-const Order = require("./client/database/model/orderModel.js")
+const { dbConnect } = require('./public/database/db.js')
+const Order = require("./public/database/model/orderModel.js")
 
 const io = new Server(server);
 
-app.use(express.static(path.join(__dirname, "/client")));
+app.use(express.static(path.join(__dirname, "/public")));
 
 const PORT = process.env.PORT || 5858
 
@@ -17,7 +17,7 @@ const PORT = process.env.PORT || 5858
 dbConnect();
 
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/client/index.html');
+    res.sendFile(__dirname + '/public/index.html');
 });
 
 io.on('connection', async (socket) => {
