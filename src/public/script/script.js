@@ -22,7 +22,7 @@ const getSessionId = () => {
     }
 }
 
-const socket = io.connect({
+var socket = io({
     query: {
         id: getSessionId()
     }
